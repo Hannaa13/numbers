@@ -1,19 +1,26 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        Numbers numbers = new Numbers();
 
         Scanner scanner = new Scanner(System.in);
         int usersN = scanner.nextInt();
-        int[] numb = Integer.toString(usersN).chars().map(c -> c - '0').toArray();
+        Paint paint = new Paint();
 
-        numbers.allNumb(numb);
+        String[][] newString = paint.allNumb(usersN);
+
+        for (String[] array : newString) {
+            System.out.println(Arrays.toString(array));
+        }
+
 
     }
-
-
 }
+
+
+
+
 
 
