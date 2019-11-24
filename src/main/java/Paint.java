@@ -101,7 +101,7 @@ public class Paint {
 
 
 
-        private static boolean isNumber(String str) {
+        private  boolean isNumber(String str) {
             return str.matches("-?\\d+");
         }
 
