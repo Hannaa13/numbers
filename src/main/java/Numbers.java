@@ -38,7 +38,7 @@ public class Numbers {
         String[][] two = new String[COUNT][COUNT];
         for (int i = 0; i < COUNT; i++) {
             for (int j = 0; j < COUNT; j++) {
-                if ((i == 0) || (i == COUNT - 1) || (j == COUNT - 1 - i)) {
+                if ((i == 0) || (i == COUNT - 1) || (i == COUNT / 2) || (j == COUNT -1  && i < COUNT / 2) || (j == 0 && i > COUNT / 2) ) {
                     two[i][j] = "@";
                 } else
                     two[i][j] = " ";
