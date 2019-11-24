@@ -38,7 +38,8 @@ public class Paint {
         if (numb[0] == 9) {
             first = numbers.nine();
         }
-        if (numb.length == 1) write(first);
+        if (numb.length == 1)
+            all = first;
         else {
             for (int i = 1; i < numb.length; i++) {
                 if (numb[i] == 0) {
