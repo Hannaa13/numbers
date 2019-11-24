@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        int usersN = scanner.nextInt();
+        String usersN = scanner.nextLine();
         Paint paint = new Paint();
 
        paint.allNumb(usersN);

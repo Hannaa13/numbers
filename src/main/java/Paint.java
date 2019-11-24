@@ -2,92 +2,109 @@ import java.util.Arrays;
 
 public class Paint {
 
-    public void allNumb(int a) throws NullPointerException {
-        int[] numb = Integer.toString(a).chars().map(c -> c - '0').toArray();
-        Numbers numbers = new Numbers();
-        String[][] first = new String[7][7];
-        String[][] all = new String[7][];
-
-        if (numb[0] == 0) {
-            first = numbers.zeroArray();
-        }
-        if (numb[0] == 1) {
-            first = numbers.one();
-        }
-        if (numb[0] == 2) {
-            first = numbers.two();
-        }
-        if (numb[0] == 3) {
-            first = numbers.three();
-        }
-        if (numb[0] == 4) {
-            first = numbers.four();
-        }
-        if (numb[0] == 5) {
-            first = numbers.five();
-        }
-        if (numb[0] == 6) {
-            first = numbers.six();
-        }
-        if (numb[0] == 7) {
-            first = numbers.seven();
-        }
-        if (numb[0] == 8) {
-            first = numbers.eight();
-        }
-        if (numb[0] == 9) {
-            first = numbers.nine();
-        }
-        if (numb.length == 1)
-            all = first;
-        else {
-            for (int i = 1; i < numb.length; i++) {
-                if (numb[i] == 0) {
-                    all = concatArrays(first, numbers.zeroArray());
-                    first = all;
-                }
-                if (numb[i] == 1) {
-                    all = concatArrays(first, numbers.one());
-                    first = all;
-                }
-                if (numb[i] == 2) {
-                    all = concatArrays(first, numbers.two());
-                    first = all;
-                }
-                if (numb[i] == 3) {
-                    all = concatArrays(first, numbers.three());
-                    first = all;
-                }
-                if (numb[i] == 4) {
-                    all = concatArrays(first, numbers.four());
-                    first = all;
-                }
-                if (numb[i] == 5) {
-                    all = concatArrays(first, numbers.five());
-                    first = all;
-                }
-                if (numb[i] == 6) {
-                    all = concatArrays(first, numbers.six());
-                    first = all;
-                }
-                if (numb[i] == 7) {
-                    all = concatArrays(first, numbers.seven());
-                    first = all;
-                }
-                if (numb[i] == 8) {
-                    all = concatArrays(first, numbers.eight());
-                    first = all;
-                }
-                if (numb[i] == 9) {
-                    all = concatArrays(first, numbers.nine());
-                    first = all;
-                }
-
+    public void allNumb(String a) throws NullPointerException {
+        char[] charArray = a.toCharArray();
+        int[] numb = new int[charArray.length];
+        if (!isNumber(a)) {
+            System.out.println("Попробуйте еще раз");
+            System.exit(0);
+        }   else {
+            for (int i = 0; i < charArray.length; i++) {
+                numb[i] = Integer.parseInt(String.valueOf(charArray[i]));
             }
         }
-        write(all);
 
-    }
+            Numbers numbers = new Numbers();
+            String[][] first = new String[7][7];
+            String[][] all = new String[7][];
+
+            if (numb[0] == 0) {
+                first = numbers.zeroArray();
+            }
+            if (numb[0] == 1) {
+                first = numbers.one();
+            }
+            if (numb[0] == 2) {
+                first = numbers.two();
+            }
+            if (numb[0] == 3) {
+                first = numbers.three();
+            }
+            if (numb[0] == 4) {
+                first = numbers.four();
+            }
+            if (numb[0] == 5) {
+                first = numbers.five();
+            }
+            if (numb[0] == 6) {
+                first = numbers.six();
+            }
+            if (numb[0] == 7) {
+                first = numbers.seven();
+            }
+            if (numb[0] == 8) {
+                first = numbers.eight();
+            }
+            if (numb[0] == 9) {
+                first = numbers.nine();
+            }
+            if (numb.length == 1)
+                all = first;
+            else {
+                for (int i = 1; i < numb.length; i++) {
+                    if (numb[i] == 0) {
+                        all = concatArrays(first, numbers.zeroArray());
+                        first = all;
+                    }
+                    if (numb[i] == 1) {
+                        all = concatArrays(first, numbers.one());
+                        first = all;
+                    }
+                    if (numb[i] == 2) {
+                        all = concatArrays(first, numbers.two());
+                        first = all;
+                    }
+                    if (numb[i] == 3) {
+                        all = concatArrays(first, numbers.three());
+                        first = all;
+                    }
+                    if (numb[i] == 4) {
+                        all = concatArrays(first, numbers.four());
+                        first = all;
+                    }
+                    if (numb[i] == 5) {
+                        all = concatArrays(first, numbers.five());
+                        first = all;
+                    }
+                    if (numb[i] == 6) {
+                        all = concatArrays(first, numbers.six());
+                        first = all;
+                    }
+                    if (numb[i] == 7) {
+                        all = concatArrays(first, numbers.seven());
+                        first = all;
+                    }
+                    if (numb[i] == 8) {
+                        all = concatArrays(first, numbers.eight());
+                        first = all;
+                    }
+                    if (numb[i] == 9) {
+                        all = concatArrays(first, numbers.nine());
+                        first = all;
+                    }
+
+                }
+            }
+            write(all);
+
+        }
+
+
+
+        private static boolean isNumber(String str) {
+            return str.matches("-?\\d+");
+        }
+
 
     private void write(String[][] all) {
         for (int i = 0; i < all.length; i++) {
