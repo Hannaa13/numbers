@@ -1,4 +1,4 @@
-import java.util.Arrays;
+
 import java.util.Scanner;
 
 public class Main {
@@ -9,11 +9,9 @@ public class Main {
         int usersN = scanner.nextInt();
         Paint paint = new Paint();
 
-        String[][] newString = paint.allNumb(usersN);
+       paint.allNumb(usersN);
 
-        for (String[] array : newString) {
-            System.out.println(Arrays.toString(array));
-        }
+
 
 
     }

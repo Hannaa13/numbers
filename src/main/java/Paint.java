@@ -1,8 +1,8 @@
-
+import java.util.Arrays;
 
 public class Paint {
 
-    public String[][] allNumb(int a) throws NullPointerException {
+    public void allNumb(int a) throws NullPointerException {
         int[] numb = Integer.toString(a).chars().map(c -> c - '0').toArray();
         Numbers numbers = new Numbers();
         String[][] first = new String[7][7];
@@ -38,7 +38,7 @@ public class Paint {
         if (numb[0] == 9) {
             first = numbers.nine();
         }
-        if (numb.length == 1) return first;
+        if (numb.length == 1) write(first);
         else {
             for (int i = 1; i < numb.length; i++) {
                 if (numb[i] == 0) {
@@ -84,12 +84,23 @@ public class Paint {
 
             }
         }
+        write(all);
 
-        return all;
+    }
+
+    private void write(String[][] all) {
+        for (int i = 0; i < all.length; i++) {
+            for (int j = 0; j < all[i].length ; j++) {
+                System.out.print(all[i][j] + " ");
+            }
+            System.out.println();
+
+        }
     }
 
 
-    public String[][] concatArrays(String[][] array1, String[][] array2) {
+
+    private String[][] concatArrays(String[][] array1, String[][] array2) {
 
         String[][] concat = new String[array1.length][];
         for (int i = 0; i < array1.length; i++) {
@@ -98,7 +109,7 @@ public class Paint {
         return concat;
     }
 
-    public String[] join(String[] array1, String[] array2) {
+    private String[] join(String[] array1, String[] array2) {
         String[] array1and2 = new String[array1.length + array2.length];
         System.arraycopy(array1, 0, array1and2, 0, array1.length);
         System.arraycopy(array2, 0, array1and2, array1.length, array2.length);

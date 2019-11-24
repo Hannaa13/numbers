@@ -65,7 +65,7 @@ public class Numbers {
         String[][] four = new String[COUNT][COUNT];
         for (int i = 0; i < COUNT; i++) {
             for (int j = 0; j < COUNT; j++) {
-                if ((j == COUNT - 1) || (i == COUNT / 2) || (j == 0 && i < COUNT / 2)) {
+                if ((j == COUNT - 1) || (j == COUNT - 2) || (i == COUNT / 2) || (j == 0 && i < COUNT / 2)) {
 
                     four[i][j] = "@";
                 } else
