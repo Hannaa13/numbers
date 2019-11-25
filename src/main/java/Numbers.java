@@ -99,7 +99,6 @@ public class Numbers {
                 } else
                     six[i][j] = " ";
             }
-            System.out.println();
 
         }
         return six;
